@@ -1,0 +1,103 @@
+/* Animasi navbar */
+.navbar {
+  position: fixed; /* atau position: sticky */
+  top: 0;
+  width: 100%;
+  transition: top 0.3s; /* Animasi pergerakan navbar */
+  z-index: 1000; /* Pastikan navbar di atas elemen lain */
+}
+
+.navbar.hide {
+  top: -100px; /* Sembunyikan navbar di luar layar */
+}
+@media (max-width: 991.98px) {
+  .navbar.hide {
+    top: 0; /* Tetap tampilkan navbar di layar kecil */
+  }
+}
+.text-justify {
+    text-align: justify !important;
+    line-height: 1.8;
+  }
+
+  .price .card img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow kustom */
+    border-radius: 10px; /* Sudut yang lebih melengkung */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek hover */
+  }
+
+  .price .card img:hover {
+    transform: translateY(-5px); /* Efek naik saat hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow lebih besar saat hover */
+  }
+
+  .about-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Custom CSS untuk footer */
+.footer {
+  background-color: #343a40;
+  padding: 20px 0;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffc107; /* Warna saat hover */
+}
+
+/* Efek shadow pada ikon saat hover */
+.footer a i {
+  transition: all 0.3s ease; /* Animasi transisi */
+}
+
+.footer a:hover i {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Efek shadow putih */
+  transform: scale(1.1); /* Sedikit memperbesar ikon */
+}
+
+/* Responsif untuk teks dan ikon */
+@media (max-width: 576px) {
+  .footer p {
+      font-size: 14px; /* Ukuran teks lebih kecil di perangkat mobile */
+  }
+  .footer a i {
+      font-size: 1.5em; /* Ukuran ikon lebih kecil di perangkat mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+  .price {
+    gap: 20px;
+    padding: 20px;
+  }
+}
+.card-img-top {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  padding: 60px;
+  justify-content: center; /* Pusatkan card */
+}

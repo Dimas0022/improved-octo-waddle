@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hameru Adventure</title>
+    <!-- Bootstrap CSS -->
+     
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet" />
+    <link href="project.css" rel="stylesheet" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <!-- body -->
+  <body>
+    <nav class="  navbar navbar-expand-lg bg-secondary-subtle ">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-3 ms-lg-5" href="#gambar"
+          >Hameru Adventure</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item m-2 m-lg-3">
+              <a class="nav-link active" aria-current="page" href="#about"
+                >About</a
+              >
+            </li>
+            <li class="nav-item m-2 m-lg-3">
+              <a class="nav-link active" aria-current="page" href="#price"
+                >Price</a
+              >
+            </li>
+            <li class="nav-item m-2 m-lg-3">
+              <a class="nav-link active" aria-current="page" href="#footer"
+                >Contact Me</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Konten -->
+     <section id ="gambar">
+       <div class="gambar container mt-5 pt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 text-center">
+          <img
+            src="gambar/hameru.jpeg"
+            class="img-fluid rounded mt-3 w-50 w-md-75 w-lg-50 mx-auto"
+            alt="hameru" />
+        </div>
+      </div>
+     </section>
+
+     <section id="about" class="py-5">
+      <div class="container">
+        <!-- Paragraf Pertama (Rata Kiri di Layar Besar) -->
+        <div class="row">
+          <div class="col-12 col-md-10 col-lg-8">
+            <div class="fs-5 fw-bold text-black bg-secondary-subtle rounded p-3 p-md-4 mt-3 ms-lg-0 me-lg-auto mx-auto about-card">
+              <h2 class="fs-3 text-center">
+                Selamat Datang di Hameru Adventure!
+              </h2>
+              <br />
+              <p class="text-justify">
+                Tempat terbaik untuk menyewa alat mendaki dan perlengkapan
+                outdoor berkualitas tinggi. Sejak berdiri pada tahun 2021,
+                kami telah menjadi pilihan utama para pecinta alam di Kota
+                Depok. Dengan peralatan yang terawat dan harga terjangkau,
+                Hameru Adventure siap menemani setiap langkah petualangan
+                Anda. Jelajahi alam bebas dengan nyaman dan aman bersama kami!
+              </p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Paragraf Kedua (Rata Kanan di Layar Besar) -->
+        <div class="row">
+          <div class="col-12 col-md-10 col-lg-8 ms-lg-auto">
+            <div class="fs-5 fw-bold text-black bg-secondary-subtle rounded p-3 p-md-4 mt-5 ms-lg-auto me-lg-0 mx-auto about-card">
+              <h2 class="fs-3 text-center">
+                Mengapa Memilih Hameru Adventure?
+              </h2>
+              <br />
+              <p class="text-justify">
+                Peralatan Lengkap Dari tenda, carrier, hingga perlengkapan
+                survival, kami menyediakan semua yang Anda butuhkan. Berkualitas
+                Tinggi Alat-alat kami terawat dengan baik dan selalu siap pakai
+                Lokasi Strategis Berbasis di Kota Depok, mudah diakses untuk
+                persiapan pendakian Anda. Pelayanan Ramah Tim kami siap membantu
+                anda memilih kebutuhan yang anda perlukan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section id="price" class="price"></section>
+
+    <section id="footer" class="footer"></section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript Lokal -->
+    <script>
+      const price = document.getElementById("price");
+
+      fetch("./price.html")
+        .then((response) => response.text())
+        .then((data) => {
+          price.innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading price.html:", error));
+    </script>
+    <script>
+      const footer = document.getElementById("footer");
+
+      fetch("./footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          footer.innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading footer.html:", error));
+    </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let lastScroll = 0;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll <= 0) {
+        navbar.classList.remove('hide');
+        return;
+      }
+
+      if (currentScroll > lastScroll && !navbar.classList.contains('hide')) {
+        navbar.classList.add('hide');
+      } else if (currentScroll < lastScroll && navbar.classList.contains('hide')) {
+        navbar.classList.remove('hide');
+      }
+
+      lastScroll = currentScroll;
+    });
+  });
+</script>
+    
+  </body>
+</html>
